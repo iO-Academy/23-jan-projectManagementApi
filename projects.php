@@ -4,6 +4,7 @@ require_once 'vendor/autoload.php';
 
 use ProjMange\Hydrators\ProjectHydrator;
 
+header("Access-Control-Allow-Origin: *");
 header('Content-Type: application/json; charset=utf-8');
 
 try {
