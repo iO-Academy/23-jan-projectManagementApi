@@ -2,8 +2,6 @@
 
 namespace ProjMange\Entities;
 
-use phpDocumentor\Reflection\Types\Boolean;
-
 class ProjectEntity
 {
     private int $id;
@@ -11,11 +9,21 @@ class ProjectEntity
     private int $client_id;
     private string $deadline;
 
+
+    /**
+     * Calculates whether the project is overdue
+     * @return bool
+     */
     private function calculateOverdue(): bool
     {
         return date($this->deadline) <= date('Y-m-d');
     }
 
+
+    /**
+     * Instructs object how to appear when turned into json
+     * @return array
+     */
     public function jsonSerialize(): array
     {
         return [
@@ -29,7 +37,3 @@ class ProjectEntity
     }
 
 }
-
-$test = new ProjectEntity();
-
-echo json_encode($test);
