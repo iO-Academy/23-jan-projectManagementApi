@@ -1,4 +1,4 @@
-#2023-jan-groundhogProjectManagementApi
+# 2023-jan-groundhogProjectManagementApi
 
 ## Project Management API
 
@@ -21,7 +21,7 @@ To run tests, from the project root run:
 
 This API only supports GET requests.
 
-Return all projects, optionally filtered by client
+Return all projects
 
 URL
 
