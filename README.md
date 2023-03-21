@@ -1,11 +1,20 @@
-## OO Project Set-up
+#2023-jan-groundhogProjectManagementApi
+
+## Project Management API
+
+Many companies use online tools to organise their projects. iO Corp have decided that none of the tools available on the market are good enough for the job, so they have asked the Groundhogs to create an in-house tool.
+
+The front-end has already been created. Using PHP OOP and SQL, we have created a backend API. 
+
+
+## Project Set-up
 
 Clone the repo  
 Run `composer install`  
 If no global composer install, run `php composer.phar install`
 
 To run tests, from the project root run:  
-`vendor/bin/phpunit tests`
+`./vendor/bin/phpunit tests`
 
 
 ## API documentation
@@ -30,13 +39,11 @@ There are no required URL params
 
 Optional:
 
-client=[numeric] - The id of a client to return projects for, if not provided, all projects are returned
-
-locale=[uk|us] - Adjusts the format of the returned data to match the users location, default to uk
+There are no optional URL params
 
 Example:
 
-/projects.php?client=1&locale=uk
+/projects.php
 
 Success Response:
 
@@ -49,7 +56,7 @@ Content:
     "id": "17",
     "name": "Overhold",
     "client_id": "7",
-    "deadline": "30/06/2022", // "06-30-2022" if locale=us
+    "deadline": "30/06/2022",
     "overdue": true
   },
   {
@@ -61,8 +68,16 @@ Content:
   }
 ]
 }
-Error Response:
 
+Error Response:
 
 Code: 500 SERVER ERROR 
 Content: {"message": "Unexpected error", "data": []}
+
+## Authors
+
+**Groundhogs January 2023:**
+HadertS barebarebears Yas-Shen Joperes-ym randallcoding alreuben Steph-ski
+
+**Acknowledgments**
+This build is dedicated to charliecog.
