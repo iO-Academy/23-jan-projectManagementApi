@@ -10,6 +10,10 @@ try {
     $dbConn = new ProjMange\Services\DbConnService();
     $db = $dbConn->getConn();
     $projects = ProjectHydrator::getAllProjects($db);
-    $successMessage = 'Successfully retrieved projects';
-    echo json_encode(\ProjMange\Services\JsonResponseService::jsonResponse($successMessage, $projects));
-} catch ()
+    $message = 'Successfully retrieved projects';
+} catch (\Exception $exception) {
+    http_response_code(500);
+    $message = 'Unexpected error';
+    $projects = [];
+}
+    echo json_encode(\ProjMange\Services\JsonResponseService::jsonResponse($message, $projects));
