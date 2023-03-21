@@ -2,12 +2,12 @@
 
 namespace ProjMange\Entities;
 
-class ProjectEntity
+class ProjectEntity implements \JsonSerializable
 {
     private int $id;
     private string $name;
     private int $client_id;
-    private string $deadline;
+    private $deadline;
 
 
     /**
@@ -16,9 +16,9 @@ class ProjectEntity
      */
     private function calculateOverdue(): bool
     {
-        return date($this->deadline) <= date('Y-m-d');
+        return date($this->deadline) <= date('Y-m-d')
+            && date($this->deadline) != null;
     }
-
 
     /**
      * Instructs object how to appear when turned into json
