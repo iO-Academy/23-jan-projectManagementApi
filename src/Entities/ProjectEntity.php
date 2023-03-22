@@ -23,6 +23,8 @@ class ProjectEntity implements \JsonSerializable
             'id' => $this->id,
             'name' => $this->name,
             'client_id' => $this->client_id,
+            'client_name' => $this->client_name,
+            'client_logo' => $this->client_logo,
             'deadline' => $this->deadline,
             'overdue' => CalculateOverdueService::calculateOverdue($this->deadline)
         ];
