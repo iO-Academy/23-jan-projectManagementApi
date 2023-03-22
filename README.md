@@ -21,7 +21,7 @@ To run tests, from the project root run:
 
 This API only supports GET requests.
 
-Return all projects
+###Return all projects
 
 * **URL**
 
@@ -29,26 +29,26 @@ Return all projects
 
 * **Method:**
 
-`GET`
+ `GET`
 
 * **URL Params**
 
-**Required:**
+ **Required:**
 
-There are no required URL params
+ There are no required URL params
 
-**Optional:**
+ **Optional:**
 
-There are no optional URL params
+ There are no optional URL params
 
-**Example:**
+ **Example:**
 
-`/projects.php`
+ `/projects.php`
 
 * **Success Response:**
 
-**Code:** 200 
-**Content:** 
+ * **Code:** 200 
+   **Content:** 
 
 ```json
 {
@@ -69,13 +69,13 @@ There are no optional URL params
     "overdue": false
   }
 ]
-};
+}
 ```
 
 * **Error Response:**
 
-**Code:** 500 SERVER ERROR 
-**Content:** `{"message": "Unexpected error", "data": []}`
+ **Code:** 500 SERVER ERROR 
+ **Content:** `{"message": "Unexpected error", "data": []}`
 
 ## Authors
 
