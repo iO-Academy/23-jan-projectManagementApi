@@ -4,7 +4,7 @@ namespace ProjMange\Hydrators;
 
 use ProjMange\Entities\ProjectEntity;
 
-class ProjectHydrator
+abstract class ProjectHydrator
 {
 
     /**

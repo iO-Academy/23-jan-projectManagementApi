@@ -5,8 +5,7 @@ namespace ProjMange\Services;
 class DbConnService
 {
     private $db;
-
-
+    
     /**
      * Constructor method to create db connection when DbConnService object instansiated
      *
