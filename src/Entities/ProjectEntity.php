@@ -11,8 +11,6 @@ class ProjectEntity implements \JsonSerializable
     private int $client_id;
     private $deadline;
 
-
-
     /**
      * Instructs object how to appear when turned into json
      * @return array
@@ -26,7 +24,5 @@ class ProjectEntity implements \JsonSerializable
             'deadline' => $this->deadline,
             'overdue' => CalculateOverdueService::calculateOverdue($this->deadline)
         ];
-
     }
-
 }
