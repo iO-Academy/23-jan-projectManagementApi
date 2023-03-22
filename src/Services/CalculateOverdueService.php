@@ -5,8 +5,8 @@ namespace ProjMange\Services;
 abstract class CalculateOverdueService
 {
     /**
-     * Calculates whether a date is overdue
-     * @param mixed - the deadline property from the db
+     * Calculates whether a date is overdue, overdue is dynamically set to tomorrow's date
+     * @param mixed - either a date string or a null
      * @return bool
      */
     public static function calculateOverdue($deadline): bool
