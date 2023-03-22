@@ -2,7 +2,7 @@
 
 namespace ProjMange\Entities;
 
-class UserEntity
+class UserEntity implements \JsonSerializable
 {
     private int $id;
     private string $name;
