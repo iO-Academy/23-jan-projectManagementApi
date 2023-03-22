@@ -6,7 +6,6 @@ use ProjMange\Entities\UserEntity;
 
 class UserHydrator
 {
-
     /**
      * retrieves user data from db
      * @param PDO $db
