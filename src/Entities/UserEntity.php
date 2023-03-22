@@ -9,7 +9,6 @@ class UserEntity implements \JsonSerializable
     private string $avatar;
     private string $role;
 
-
     /**
      * instruct object on how to appear when turned into json
      * @return array
