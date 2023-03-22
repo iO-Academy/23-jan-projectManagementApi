@@ -5,19 +5,19 @@ class JsonResponseServiceTest extends TestCase {
 
     public function testSuccessJsonResponse()
     {
-        $expected = ['data' => ['id' => 1, 'name' => 'fake name'], 'message' => 'test'];
+        $expected = ['message' => 'test', 'data' => ['id' => 1, 'name' => 'fake name']];
         $inputMessage = 'test';
         $inputData = ['id' => 1, 'name' => 'fake name'];
         $result = \ProjMange\Services\JsonResponseService::jsonResponse($inputMessage, $inputData);
-        $this->assertSame($expected, $result);
+        $this->assertEquals($expected, $result);
     }
 
     public function testFailureJsonResponse()
     {
-        $expected = ['data' => [], 'message' => 'test'];
+        $expected = ['message' => 'test', 'data' => []];
         $inputMessage = 'test';
         $result = \ProjMange\Services\JsonResponseService::jsonResponse($inputMessage);
-        $this->assertSame($expected, $result);
+        $this->assertEquals($expected, $result);
     }
 
     public function testMalformedJsonResponse()
