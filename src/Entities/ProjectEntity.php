@@ -13,6 +13,24 @@ class ProjectEntity implements \JsonSerializable
     private string $client_logo;
     private $deadline;
 
+    private array $users = [];
+
+
+    /**
+     * adds user entities to the user array
+     *
+     * @param array $users
+     * @return void
+     */
+    public function setUsers(array $users): void
+    {
+        foreach ($users as $user) {
+            if ($user instanceof UserEntity) {
+                $this->users[] = $user;
+            }
+        }
+    }
+
     /**
      * Instructs object how to appear when turned into json
      * @return array
@@ -26,7 +44,8 @@ class ProjectEntity implements \JsonSerializable
             'client_name' => $this->client_name,
             'client_logo' => $this->client_logo,
             'deadline' => $this->deadline,
-            'overdue' => CalculateOverdueService::calculateOverdue($this->deadline)
+            'overdue' => CalculateOverdueService::calculateOverdue($this->deadline),
+            'users' => $this->users
         ];
     }
 }
