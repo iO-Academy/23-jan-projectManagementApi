@@ -2,9 +2,9 @@
 
 namespace ProjMange\Services;
 
-class RequestValidatorService
+abstract class RequestValidatorService
 {
-    public function validateId(int $id): bool
+    public static function validateId(int $id, array $projects): bool
     {
         $validatedId = filter_var($id, FILTER_VALIDATE_INT);
         if ($validatedId !== false && $validatedId < 1000000 && array_key_exists($id, $projects)) {
