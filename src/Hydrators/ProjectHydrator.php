@@ -4,12 +4,12 @@ namespace ProjMange\Hydrators;
 
 use ProjMange\Entities\ProjectEntity;
 
-class ProjectHydrator
+abstract class ProjectHydrator
 {
 
     /**
      * Retrieves projects data from DB
-     * @param PDO $db
+     * @param \PDO $db
      * @return mixed
      */
     public static function getAllProjects(\PDO $db)
