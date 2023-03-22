@@ -21,7 +21,7 @@ To run tests, from the project root run:
 
 This API only supports GET requests.
 
-##Return all projects
+### Return all projects
 
 * **URL**
 
