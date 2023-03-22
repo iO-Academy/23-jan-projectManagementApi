@@ -9,7 +9,7 @@ abstract class RequestValidatorService
      * @param int $inputId
      * @return bool
      */
-    public static function validateId(int $inputId): bool
+    public static function validateId($inputId): bool
     {
         $validatedId = filter_var($inputId, FILTER_VALIDATE_INT);
         if ($validatedId !== false && $validatedId < 1000000) {

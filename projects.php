@@ -17,4 +17,4 @@ try {
     $message = 'Unexpected error';
     $projects = [];
 }
-echo json_encode(\ProjMange\Services\JsonResponseService::jsonResponse($message, $projects));
+echo json_encode(\ProjMange\Services\JsonResponseService::jsonResponseAllProjects($message, $projects));

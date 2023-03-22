@@ -14,10 +14,10 @@ class UserHydrator
      */
     public static function getUserById(\PDO $db, int $id)
     {
-        $stmnt = $db->prepare("SELECT `id`, `name`, `avatar`, `role` FROM  project_users LEFT JOIN users ON project_users.`user_id` = users.`id` WHERE project_users.`project_id` = :id;");
+        $stmnt = $db->prepare("SELECT `users`.`id`, `users`.`name`, `users`.`avatar`, `users`.`role` FROM  `project_users` LEFT JOIN `users` ON `project_users`.`user_id` = `users`.`id` WHERE `project_users`.`project_id` = :id;");
         $stmnt->setFetchMode(\PDO::FETCH_CLASS, UserEntity::class);
         $stmnt->bindParam(':id', $id);
         $stmnt->execute();
-        return $stmnt->fetch();
+        return $stmnt->fetchAll();
     }
 }

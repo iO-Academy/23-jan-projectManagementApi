@@ -27,7 +27,7 @@ abstract class ProjectHydrator
      */
     public static function getProjectById(\PDO $db, int $id)
     {
-        $stmnt = $db->prepare("SELECT `projects`.`id`, `projects`.`name`, `projects`.`client_id`, `projects`.`deadline`, `clients`.`name` AS 'client_name', `clients`.`logo` AS 'client_logo' FROM `projects` LEFT JOIN `clients` ON `projects`.`client_id` = `clients`.`id` WHERE project_users.`project_id` = :id;");
+        $stmnt = $db->prepare("SELECT `projects`.`id`, `projects`.`name`, `projects`.`client_id`, `projects`.`deadline`, `clients`.`name` AS 'client_name', `clients`.`logo` AS 'client_logo' FROM `projects` LEFT JOIN `clients` ON `projects`.`client_id` = `clients`.`id` LEFT JOIN `project_users` ON `project_users`.`project_id` WHERE `project_users`.`project_id` = :id;");
         $stmnt->setFetchMode(\PDO::FETCH_CLASS, ProjectEntity::class);
         $stmnt->bindParam(':id', $id);
         $stmnt->execute();
