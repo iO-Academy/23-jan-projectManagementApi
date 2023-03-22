@@ -89,4 +89,5 @@ This API only supports GET requests.
 * Steph-ski
 
 **Acknowledgments**
+
 This build is dedicated to charliecog.
