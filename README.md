@@ -49,7 +49,9 @@ There are no optional URL params
 
 **Code:** 200 
 **Content:** 
-```{
+
+```json
+{
 "message": "Successfully retrieved projects",
 "data": [
   {
@@ -67,7 +69,8 @@ There are no optional URL params
     "overdue": false
   }
 ]
-}```
+};
+```
 
 * **Error Response:**
 
@@ -77,7 +80,13 @@ There are no optional URL params
 ## Authors
 
 **Groundhogs January 2023:**
-HadertS barebarebears Yas-Shen Joperes-ym randallcoding alreuben Steph-ski
+* HadertS 
+* barebarebears 
+* Yas-Shen 
+* Joperes-ym 
+* randallcoding 
+* alreuben 
+* Steph-ski
 
 **Acknowledgments**
 This build is dedicated to charliecog.
