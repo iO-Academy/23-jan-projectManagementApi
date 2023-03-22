@@ -4,7 +4,6 @@ namespace ProjMange\Services;
 
 abstract class RequestValidatorService
 {
-
     /**
      * Validates the input id to make sure it exists, is a number and is not too big
      * @param int $inputId
