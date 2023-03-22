@@ -23,15 +23,15 @@ This API only supports GET requests.
 
 Return all projects
 
-**URL**
+* **URL**
 
 /projects.php
 
-**Method:**
+* **Method:**
 
 `GET`
 
-**URL Params**
+* **URL Params**
 
 **Required:**
 
@@ -45,11 +45,11 @@ There are no optional URL params
 
 `/projects.php`
 
-**Success Response:**
+* **Success Response:**
 
 **Code:** 200 
 **Content:** 
-`{
+```{
 "message": "Successfully retrieved projects",
 "data": [
   {
@@ -67,9 +67,9 @@ There are no optional URL params
     "overdue": false
   }
 ]
-}`
+}```
 
-**Error Response:**
+* **Error Response:**
 
 **Code:** 500 SERVER ERROR 
 **Content:** `{"message": "Unexpected error", "data": []}`
