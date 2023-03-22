@@ -8,6 +8,9 @@ class ProjectEntity implements \JsonSerializable
     private string $name;
     private int $client_id;
     private string $deadline;
+    private string $client_name;
+    private string $client_logo;
+
 
     /**
      * Calculates whether the project is overdue
