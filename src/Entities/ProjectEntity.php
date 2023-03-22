@@ -12,9 +12,7 @@ class ProjectEntity implements \JsonSerializable
     private string $client_name;
     private string $client_logo;
     private $deadline;
-
     private array $users = [];
-
 
     /**
      * adds user entities to the user array

@@ -6,7 +6,6 @@ use ProjMange\Entities\ProjectEntity;
 
 abstract class ProjectHydrator
 {
-
     /**
      * Retrieves projects data from DB
      * @param \PDO $db
@@ -19,7 +18,6 @@ abstract class ProjectHydrator
         $stmt->execute();
         return $stmt->fetchAll();
     }
-
 
     /**
      * @retrieves project data from the db with additional client data
