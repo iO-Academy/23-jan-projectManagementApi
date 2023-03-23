@@ -25,7 +25,7 @@ abstract class JsonResponseService
      * @param ProjectEntity $project
      * @return array with the message input and the data input
      */
-    public static function formatJsonResponseProject(string $message, ProjectEntity $project): array
+    public static function formatJsonResponseProject(string $message = '', ProjectEntity $project): array
     {
         return ['message' => $message, 'data' => $project];
     }
