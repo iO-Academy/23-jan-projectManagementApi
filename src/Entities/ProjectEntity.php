@@ -15,6 +15,19 @@ class ProjectEntity implements \JsonSerializable
     private array $users = [];
 
     /**
+     * a function that formats the deadline date to use '/'. It will return null if there's no deadline
+     * @return string|null
+     */
+    public function getDeadline()
+    {
+        if($this->deadline === null) {
+            return null;
+        }
+        $datetime = new \DateTime($this->deadline);
+        return $datetime->format('Y/m/d');
+    }
+
+    /**
      * adds user entities to the user array
      *
      * @param array $users
@@ -41,7 +54,7 @@ class ProjectEntity implements \JsonSerializable
             'client_id' => $this->client_id,
             'client_name' => $this->client_name,
             'client_logo' => $this->client_logo,
-            'deadline' => $this->deadline,
+            'deadline' => $this->getDeadline(),
             'overdue' => CalculateOverdueService::calculateOverdue($this->deadline),
             'users' => $this->users
         ];
