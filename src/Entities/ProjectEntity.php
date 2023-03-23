@@ -24,7 +24,7 @@ class ProjectEntity implements \JsonSerializable
             return null;
         }
         $datetime = new \DateTime($this->deadline);
-        return $datetime->format('Y/m/d');
+        return $datetime->format('d/m/Y');
     }
 
     /**
