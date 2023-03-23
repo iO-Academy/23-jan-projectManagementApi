@@ -77,6 +77,79 @@ This API only supports GET requests.
  **Code:** 500 SERVER ERROR 
  **Content:** `{"message": "Unexpected error", "data": []}`
 
+
+
+
+### Return a specific project
+
+* **URL**
+
+/project.php
+
+* **Method:**
+
+GET
+
+* **URL Params**
+
+ **Required:**
+
+id=[numeric] - The id of the project to return
+
+ **Optional:**
+
+There are no optional URL params
+
+ **Example:**
+
+/project.php?id=1
+
+* **Success Response:**
+
+ * **Code: 200**
+   **Content:**
+   
+```json   
+{
+"message": "Successfully retrieved project",
+"data": {
+    "id": "17",
+    "name": "Overhold",
+    "client_id": "7",
+    "client_name": "Avamba",
+    "client_logo": "http://dummyimage.com/200x200.png/dddddd/000000",
+    "users": [
+      {
+        "id": "1",
+        "name": "Lamond Teather",
+        "avatar": "https://robohash.org/explicaboautodit.png?size=50x50&set=set1",
+        "role": "Geological Engineer"
+      },
+      {
+        "id": "2",
+        "name": "Jonas Filippazzo",
+        "avatar": "https://robohash.org/explicaboautodit.png?size=50x50&set=set1",
+        "role": "Senior Editor"
+      }
+    ],
+    "deadline": "30/06/2022", 
+    "overdue": true
+  }
+}
+````
+
+* **Error Response:**
+
+ **Code:** 400 BAD REQUEST
+ **Content:** {"message": "Invalid project ID", "data": []}
+
+ **Code:** 500 SERVER ERROR
+ **Content:** {"message": "Unexpected error", "data": []}
+
+
+
+
+
 ## Authors
 
 **Groundhogs January 2023:**
