@@ -2,20 +2,21 @@
 
 namespace ProjMange\Services;
 
+use ProjMange\CustomExceptions\InvalidIdException;
+
 abstract class RequestValidatorService
 {
     /**
      * Validates the input id to make sure it exists, is a number and is not too big
      * @param int $inputId
-     * @return bool
+     * @return void
+     * @throws InvalidIdException
      */
-    public static function validateId(int $inputId): bool
+    public static function validateId(int $inputId): void
     {
         $validatedId = filter_var($inputId, FILTER_VALIDATE_INT);
-        if ($validatedId !== false && $validatedId < 1000000) {
-            return true;
-        } else {
-            return false;
+        if (!$validatedId || $validatedId > 1000000) {
+            throw new InvalidIdException('Invalid project ID');
         }
     }
 }
