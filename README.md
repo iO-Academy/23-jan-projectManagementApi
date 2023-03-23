@@ -88,7 +88,7 @@ This API only supports GET requests.
 
 * **Method:**
 
-GET
+`GET`
 
 * **URL Params**
 
@@ -102,7 +102,7 @@ There are no optional URL params
 
  **Example:**
 
-/project.php?id=1
+`/project.php?id=1`
 
 * **Success Response:**
 
@@ -141,10 +141,10 @@ There are no optional URL params
 * **Error Response:**
 
  **Code:** 400 BAD REQUEST
- **Content:** {"message": "Invalid project ID", "data": []}
+ **Content:** `{"message": "Invalid project ID", "data": []}`
 
  **Code:** 500 SERVER ERROR
- **Content:** {"message": "Unexpected error", "data": []}
+ **Content:** `{"message": "Unexpected error", "data": []}`
 
 
 
