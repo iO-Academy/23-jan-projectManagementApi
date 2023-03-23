@@ -11,12 +11,7 @@ abstract class JsonResponseService
      * @param array $data
      * @return array with the message input and the data input
      */
-    public static function jsonResponseAllProjects(string $message, array $data = []): array
-    {
-        return ['message' => $message, 'data' => $data];
-    }
-
-    public static function jsonResponseProject(string $message, object $data): array
+    public static function formatJsonResponse(string $message, array $data = []): array
     {
         return ['message' => $message, 'data' => $data];
     }
