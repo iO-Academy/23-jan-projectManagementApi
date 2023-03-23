@@ -10,9 +10,11 @@ use ProjMange\Services\RequestValidatorService;
 use ProjMange\Hydrators\ProjectHydrator;
 use ProjMange\Hydrators\UserHydrator;
 
-$inputId = intval($_GET['id']);
-
 try {
+    if(!isset($_GET['id'])) {
+        throw new InvalidIdException('Invalid project ID');
+    }
+    $inputId = intval($_GET['id']);
     RequestValidatorService::validateId($inputId);
     $dbConn = new \ProjMange\Services\DbConnService();
     $db = $dbConn->getConn();
