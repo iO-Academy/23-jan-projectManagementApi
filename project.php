@@ -12,20 +12,6 @@ use ProjMange\Hydrators\UserHydrator;
 
 $inputId = intval($_GET['id']);
 
-//if (!RequestValidatorService::validateId($inputId)) {
-//    http_response_code(400);
-//    $message = 'Invalid project ID';
-//    echo $message;
-//}
-
-//try {
-//    !RequestValidatorService::validateId($inputId);
-//} catch (\Exception $exception) {
-//    http_response_code(400);
-//    $message = 'Invalid project ID';
-//    echo $message;
-//}
-
 try {
     RequestValidatorService::validateId($inputId);
     $dbConn = new \ProjMange\Services\DbConnService();
@@ -34,15 +20,15 @@ try {
     $users = UserHydrator::getUserById($db, $inputId);
     $project->setUsers($users);
     $message = 'Successfully retrieved project';
-    $project = [$project];
+    $response = \ProjMange\Services\JsonResponseService::formatJsonResponseProject($message, $project);
 } catch (InvalidIdException $exception) {
     http_response_code(400);
     $message = $exception->getMessage();
-    $project = [];
+    $response = \ProjMange\Services\JsonResponseService::formatJsonResponse($message);
 } catch (\Exception $exception) {
     http_response_code(500);
     $message = 'Unexpected error';
-    $project = [];
+    $response = \ProjMange\Services\JsonResponseService::formatJsonResponse($message);
 }
 
-echo json_encode(\ProjMange\Services\JsonResponseService::formatJsonResponse($message, $project));
+echo json_encode($response);
