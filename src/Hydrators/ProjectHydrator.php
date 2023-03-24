@@ -3,6 +3,7 @@
 namespace ProjMange\Hydrators;
 
 use ProjMange\Entities\ProjectEntity;
+use ProjMange\Entities\ProjectWithUsersEntity;
 
 abstract class ProjectHydrator
 {
@@ -32,7 +33,7 @@ abstract class ProjectHydrator
 LEFT JOIN `project_users` ON `projects`.`id` = `project_users`.`project_id`
 LEFT JOIN `clients` ON `projects`.`client_id` = `clients`.`id`
 WHERE `project_users`.`project_id` = :id;");
-        $stmnt->setFetchMode(\PDO::FETCH_CLASS, ProjectEntity::class);
+        $stmnt->setFetchMode(\PDO::FETCH_CLASS, ProjectWithUsersEntity::class);
         $stmnt->bindParam(':id', $id);
         $stmnt->execute();
         return $stmnt->fetch();
